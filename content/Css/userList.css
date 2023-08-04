@@ -39,8 +39,8 @@ body{
     text-align: center;
 }
 .user-img{
-    width: 122px;
-    height: 122px;
+    width: 110px;
+    height: 110px;
     display: block;
     border-radius: 50%;
     object-fit: cover;
