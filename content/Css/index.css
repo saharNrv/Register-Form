@@ -30,6 +30,7 @@ body {
   bottom: 0;
   background: unset;
   filter: blur(10px);
+  z-index: -1;
 }
 form {
   width: 100%;
