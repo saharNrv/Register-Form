@@ -8,7 +8,7 @@
     <title>User-List</title>
 </head>
 <body>
-
+<!-- remove modal -->
     <div class="modal ">
         <div class="remove">
             <h2>Are You Share Delete?</h2>
@@ -18,8 +18,33 @@
             </div>
         </div>
     </div>
-
+<!-- edit modal -->
+<div class="edit-modal ">
+    <div class="edit">
+        <form>
+            <div class="input-wrapper">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" placeholder="firstname" class="firstname">
+            </div>
+            <div class="input-wrapper">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" placeholder="lastname" class="lastname">
+            </div>
+            <div class="input-wrapper">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" placeholder="username" class="username">
+            </div>
+            <div class="input-wrapper">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" placeholder="password" class="password">
+            </div>
+            <button class="editBtn">Register</button>
+        </form>
+        <button class="editClose">close</button>
+    </div>
+</div>
 <div class="user-list">
+    <p class="none">user list is empety</p>
     <div class="user-list-wrapper">
       
         <!-- load with js -->
