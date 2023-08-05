@@ -2,10 +2,9 @@ window.addEventListener('load',()=>{
     const userListWrapper=document.querySelector('.user-list-wrapper')
 
     fetch('http://localhost:3000/api/user-list/')
-        .then(res=>res.json())
-        .then(data=>{
-            
-            console.log(data);
+    .then(res=>res.json())
+    .then(data=>{
+            userListWrapper.innerHTML=''
             data.forEach(user => {
                 userListWrapper.insertAdjacentHTML('beforeend',`
                 <div class="user-info">
@@ -20,8 +19,8 @@ window.addEventListener('load',()=>{
                     <h3>${user.username}</h3>
                 </div>
                 <div class="user-remove">
-                    <span class="delete-icon"><i class="fa-solid fa-trash"></i></span>
-                    <span class="edit-icon"><i class="fa-solid fa-pen-to-square"></i></span>
+                    <button class="delete-icon" onClick="removeUser('${user.id}')"><i class="fa-solid fa-trash"></i></button>
+                    <button class="edit-icon"><i class="fa-solid fa-pen-to-square"></i></button>
                 </div>
             </div>`)
                 
@@ -31,3 +30,14 @@ window.addEventListener('load',()=>{
 
 
 })
+
+function removeUser(id){
+    console.log(id);
+
+    fetch(`http://localhost:3000/api/user-list/${id}`,{
+        method:"DELETE"
+    }).then(res=>res.json)
+      .then(data=>{
+        console.log(data);
+      })
+}
